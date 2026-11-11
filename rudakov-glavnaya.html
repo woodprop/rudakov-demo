@@ -1,0 +1,980 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Рудаков и компания</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Мастерская Станислава Рудакова. Реставрируем классические катера и яхты, ремонтируем корпуса, двигатели и электрику, строим суда от 5 метров. Консультация бесплатно.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a builder's drawing sheet. Navy "чертёж" bands with hull lines, white paper sections,
+   varnished-mahogany deck planks as the one bold material (photo placeholders), brass for small marks. */
+:root{
+  --paper:#f7f8f9;
+  --paper-2:#eceff2;
+  --ink:#14202e;
+  --ink-soft:#4a5766;
+  --line:#d3d9e0;
+  --navy:#0f2236;
+  --navy-2:#16304b;
+  --on-navy:#e9eef4;
+  --on-navy-soft:#9fb1c4;
+  --mahogany:#7a3420;
+  --mahogany-d:#5c2414;
+  --mahogany-l:#94452a;
+  --caulk:#efe6d3;
+  --brass:#b8893a;
+  --accent:#8a3a22;
+  --accent-ink:#ffffff;
+  --card:#ffffff;
+  --f-display:"Playfair Display", "Times New Roman", Georgia, serif;
+  --f-body:"Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --wrap:1200px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0d1823; --paper-2:#12202e; --ink:#e6ebf0; --ink-soft:#a3b0bd; --line:#253647;
+    --navy:#081420; --navy-2:#0f2236; --on-navy:#e9eef4; --on-navy-soft:#93a6ba;
+    --accent:#c0623f; --accent-ink:#ffffff; --card:#122130; --brass:#d1a253;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0d1823; --paper-2:#12202e; --ink:#e6ebf0; --ink-soft:#a3b0bd; --line:#253647;
+  --navy:#081420; --navy-2:#0f2236; --on-navy:#e9eef4; --on-navy-soft:#93a6ba;
+  --accent:#c0623f; --accent-ink:#ffffff; --card:#122130; --brass:#d1a253;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{transition:none!important;animation:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--navy)}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;line-height:1.12;text-wrap:balance;margin:0}
+h2{font-size:clamp(30px,4.2vw,48px)}
+h3{font-size:clamp(21px,2.2vw,26px)}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:720px){.wrap{padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}}
+.section{padding-block:clamp(64px,9vw,120px)}
+.eyebrow{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.on-navy .eyebrow{color:var(--brass)}
+.lead{font-size:clamp(17px,1.6vw,19px);color:var(--ink-soft);max-width:62ch}
+.head{display:grid;gap:18px;margin-bottom:clamp(36px,5vw,56px);max-width:760px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:2px;font:600 15.5px/1.2 var(--f-body);letter-spacing:.01em;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{background:var(--mahogany-d)}
+.btn-ghost{border-color:currentColor;color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+.on-navy .btn-ghost{color:var(--on-navy)}
+.on-navy .btn-ghost:hover{background:var(--on-navy);color:var(--navy)}
+.btn svg{width:18px;height:18px;flex:none}
+.textlink{font-family:var(--f-mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:3px;color:var(--accent)}
+
+/* header */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--navy);color:var(--on-navy);border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar .wrap{display:flex;align-items:center;gap:24px;min-height:72px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex:none}
+.logo-mark{width:40px;height:40px;border:1px solid var(--brass);display:grid;place-items:center;font-family:var(--f-display);font-size:21px;font-weight:600;color:var(--brass)}
+.logo-text{display:grid;line-height:1.15}
+.logo-text b{font-family:var(--f-display);font-weight:600;font-size:18px;letter-spacing:.01em}
+.logo-text span{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-navy-soft)}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{white-space:nowrap;text-decoration:none;font-size:14.5px;color:var(--on-navy-soft);transition:color .2s}
+.nav a:hover{color:var(--on-navy)}
+.top-phone{display:grid;text-align:right;line-height:1.2;text-decoration:none}
+.top-phone b{white-space:nowrap;font-family:var(--f-mono);font-weight:500;font-size:15px;letter-spacing:.02em}
+.top-phone span{font-size:11.5px;color:var(--brass)}
+.topbar .btn{min-height:42px;padding:0 18px;font-size:14px}
+@media (max-width:1240px){.nav{display:none}.top-phone{margin-left:auto}}
+@media (max-width:640px){.top-phone{display:none}.topbar .btn{margin-left:auto;padding:0 14px}.logo-text span{display:none}}
+
+/* hero */
+.hero{background:var(--navy);color:var(--on-navy);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center;padding-block:clamp(56px,8vw,104px) clamp(56px,7vw,96px)}
+.hero h1{font-size:clamp(40px,6vw,76px);font-weight:600;letter-spacing:-.01em;margin-top:22px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--brass)}
+.hero .lead{color:var(--on-navy-soft);margin-top:24px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:28px;font-family:var(--f-mono);font-size:13.5px;color:var(--on-navy-soft)}
+.hero-meta b{color:var(--on-navy);font-weight:500}
+.hero-visual{position:relative;display:grid;gap:14px}
+.hero-photo{aspect-ratio:4/3.3}
+.spec-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid rgba(255,255,255,.14)}
+.spec-strip div{padding:14px 16px;border-right:1px solid rgba(255,255,255,.14)}
+.spec-strip div:last-child{border-right:0}
+.spec-strip small{display:block;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-navy-soft)}
+.spec-strip b{font-family:var(--f-display);font-size:24px;font-weight:600}
+.hull{position:absolute;left:0;right:0;bottom:-70px;width:100%;height:auto;opacity:.12;pointer-events:none}
+@media (max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:480px){.hero-ctas .btn{width:100%}.spec-strip b{font-size:19px}}
+
+/* mahogany deck placeholder */
+.ph{position:relative;max-width:100%;overflow:hidden;border-radius:2px;
+  background:
+    linear-gradient(115deg,rgba(255,226,180,.22) 0%,rgba(255,226,180,0) 38%,rgba(0,0,0,.18) 100%),
+    repeating-linear-gradient(90deg,rgba(0,0,0,.05) 0 3px,rgba(255,255,255,.03) 3px 7px),
+    repeating-linear-gradient(180deg,var(--mahogany) 0 46px,var(--caulk) 46px 48px,var(--mahogany-l) 48px 94px,var(--caulk) 94px 96px,var(--mahogany-d) 96px 142px,var(--caulk) 142px 144px);
+}
+.ph::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),inset 0 -80px 90px -40px rgba(0,0,0,.35)}
+.ph-label{position:absolute;left:14px;bottom:14px;z-index:1;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(15,34,54,.78);padding:6px 10px;max-width:calc(100% - 28px)}
+.ph-tag{position:absolute;right:14px;top:14px;z-index:1;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:var(--caulk);padding:4px 8px}
+
+/* services (square tiles like the reference) */
+.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2.4vw,32px)}
+.svc{display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:16px;text-decoration:none;background:var(--card);border:1px solid var(--line);transition:border-color .2s,box-shadow .2s}
+.svc:hover{border-color:var(--ink-soft);box-shadow:0 10px 30px -18px rgba(15,34,54,.35)}
+.svc > :not(.ph){margin-inline:clamp(18px,2vw,26px)}
+.svc .ph{aspect-ratio:1/1;border-radius:0}
+.svc .num{min-height:1.2em;align-self:end}
+.svc .textlink{align-self:end;margin-bottom:26px}
+.svc .num{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.svc p{color:var(--ink-soft)}
+.svc .textlink{justify-self:start}
+.svc h3{align-self:start}
+.svc:hover .ph{filter:brightness(1.07)}
+.also{margin-top:clamp(36px,5vw,52px);padding-top:24px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;align-items:baseline;color:var(--ink-soft)}
+.also b{color:var(--ink);font-weight:600}
+@media (max-width:860px){.services{grid-template-columns:minmax(0,1fr)}.svc{grid-row:auto;grid-template-rows:none;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);column-gap:0;align-content:start}.svc .ph{grid-row:span 5;aspect-ratio:auto;min-height:100%}.svc > :not(.ph){margin-inline:22px}.svc .num:empty{display:none}.svc .num{margin-top:22px}.svc h3{margin-top:22px}.svc .num + h3{margin-top:0}}
+@media (max-width:520px){.svc{grid-template-columns:minmax(0,1fr)}.svc .ph{grid-row:auto;aspect-ratio:4/3;min-height:0}}
+
+/* trust */
+.trust{background:var(--paper-2)}
+.trust-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr);gap:clamp(32px,6vw,96px);align-items:start}
+.trust-list{list-style:none;margin:0;padding:0;display:grid}
+.trust-list li{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;padding-block:24px;border-top:1px solid var(--line)}
+.trust-list li:last-child{border-bottom:1px solid var(--line)}
+.trust-list b{font-family:var(--f-display);font-size:21px;font-weight:600;line-height:1.25}
+.trust-list span{color:var(--ink-soft)}
+@media (max-width:900px){.trust-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:600px){.trust-list li{grid-template-columns:minmax(0,1fr);gap:6px}}
+
+/* projects */
+.slider{display:grid;gap:22px}
+.slider-bar{display:flex;align-items:center;gap:24px}
+.slider-count{display:flex;align-items:baseline;gap:8px;font-family:var(--f-mono);color:var(--ink-soft);font-size:14px;flex:none}
+.slider-count b{font-family:var(--f-display);font-size:30px;font-weight:600;color:var(--ink)}
+.slider-progress{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
+.slider-progress i{position:absolute;left:0;top:0;bottom:0;width:33.34%;background:var(--accent);transition:transform .35s ease}
+.slider-btns{display:flex;gap:10px;flex:none}
+.sl-btn{width:56px;height:56px;display:grid;place-items:center;border:1px solid var(--ink);background:var(--card);color:var(--ink);cursor:pointer;border-radius:0;transition:background .2s,color .2s,opacity .2s}
+.sl-btn svg{width:22px;height:22px}
+.sl-btn:hover:not(:disabled){background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.sl-btn:disabled{opacity:.3;cursor:default}
+.sl-btn:focus-visible,.slides:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.slides{display:grid;grid-auto-flow:column;grid-auto-columns:88%;gap:clamp(16px,2vw,24px);overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;overscroll-behavior-x:contain}
+.slides::-webkit-scrollbar{display:none}
+.slides-reviews{grid-auto-columns:calc((100% - 2 * clamp(16px,2vw,24px)) / 2.35)}
+.slides-reviews .review{scroll-snap-align:start;margin:0}
+@media (max-width:900px){.slides-reviews{grid-auto-columns:calc((100% - clamp(16px,2vw,24px)) / 1.4)}}
+@media (max-width:560px){.slides-reviews{grid-auto-columns:88%}}
+.slides .project{scroll-snap-align:start;background:var(--card);border:1px solid var(--line);padding:clamp(18px,2.4vw,32px)}
+.slides .stages{grid-template-columns:repeat(2,minmax(0,1fr))}
+.slides .stages .ph{aspect-ratio:4/3}
+.slides .stages .ph:last-child{order:-1;grid-column:1/-1;aspect-ratio:16/10}
+.slider-hint{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+@media (min-width:861px){.slider-hint{display:none}}
+@media (max-width:560px){.slides{grid-auto-columns:92%}.slider-bar{gap:14px}.sl-btn{width:48px;height:48px}}
+.project{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+.stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.stages .ph{aspect-ratio:3/4}
+.stages .ph:first-child{filter:grayscale(.75) brightness(.8)}
+.stages .ph:nth-child(2){filter:saturate(.6)}
+.project h3{margin-top:10px}
+.project-year{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.specs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.specs div{padding:12px 0}
+.specs small{display:block;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft)}
+.specs b{font-family:var(--f-mono);font-weight:500;font-size:15px;font-variant-numeric:tabular-nums}
+.project dl{display:grid;gap:14px;margin:22px 0 0}
+.project dt{font-weight:700;font-size:14px}
+.project dd{margin:2px 0 0;color:var(--ink-soft)}
+.private{margin-top:clamp(40px,5vw,56px);display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;align-items:center;padding:28px clamp(20px,3vw,36px);border:1px dashed var(--line)}
+.private p{max-width:60ch;color:var(--ink-soft)}
+@media (max-width:860px){.project{grid-template-columns:minmax(0,1fr)}}
+
+/* restoration: split band with drawing */
+.restore{background:var(--navy);color:var(--on-navy)}
+.restore-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.restore .lead{color:var(--on-navy-soft)}
+.checklist{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:0}
+.checklist li{padding:13px 0 13px 34px;border-top:1px solid rgba(255,255,255,.12);position:relative}
+.checklist li::before{content:"";position:absolute;left:4px;top:22px;width:14px;height:1px;background:var(--brass)}
+.checklist li::after{content:"";position:absolute;left:11px;top:17px;width:1px;height:11px;background:var(--brass)}
+.result{margin-top:28px;font-family:var(--f-display);font-style:italic;font-size:clamp(20px,2vw,24px);line-height:1.4;color:var(--on-navy)}
+.restore .ph{aspect-ratio:4/5}
+@media (max-width:900px){.restore-grid{grid-template-columns:minmax(0,1fr)}.restore .ph{aspect-ratio:4/3}}
+
+/* repair grid */
+.repair-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.repair-grid div{padding:28px clamp(18px,2.4vw,30px);border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;gap:10px;align-content:start}
+.repair-grid svg{width:34px;height:34px;color:var(--accent)}
+.repair-grid b{font-family:var(--f-display);font-size:21px;font-weight:600}
+.repair-grid span{color:var(--ink-soft)}
+.photo-cta{margin-top:32px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px}
+.photo-cta p{font-size:19px;font-weight:600}
+@media (max-width:900px){.repair-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.repair-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* build */
+.build{background:var(--paper-2)}
+.build-drawing{margin-bottom:clamp(36px,5vw,56px);border:1px solid var(--line);background:var(--card);overflow-x:auto}
+.build-drawing svg{display:block;width:100%;min-width:560px;height:auto;color:var(--ink)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;counter-reset:s}
+.steps li{counter-increment:s;padding:22px 20px 0 0;border-top:2px solid var(--ink);display:grid;gap:8px;align-content:start}
+.steps li::before{content:"0" counter(s);font-family:var(--f-mono);font-size:13px;color:var(--accent);letter-spacing:.1em}
+.steps li b{font-weight:600}
+.build-foot{margin-top:40px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+@media (max-width:900px){.steps{grid-template-columns:minmax(0,1fr)}.steps li{grid-template-columns:44px minmax(0,1fr);padding:16px 0;border-top:1px solid var(--line)}}
+
+/* systems */
+.sys{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,96px)}
+.sys-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px}
+.sys-list li{padding:18px 0;border-top:1px solid var(--line)}
+.sys-list b{display:block;font-weight:700}
+.sys-list span{color:var(--ink-soft);font-size:15.5px}
+@media (max-width:860px){.sys{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){.sys-list{grid-template-columns:minmax(0,1fr)}}
+
+/* process */
+.process{background:var(--navy);color:var(--on-navy)}
+.proc{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:relative}
+.proc li{display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:12px;align-content:start;padding-right:22px;position:relative}
+.proc b{align-self:start}
+.proc .dot{width:52px;height:52px;border-radius:50%;border:1px solid var(--brass);display:grid;place-items:center;font-family:var(--f-mono);font-size:15px;color:var(--brass);background:var(--navy);position:relative;z-index:1}
+.proc li:first-child .dot{background:var(--brass);color:var(--navy)}
+.proc::before{content:"";position:absolute;left:26px;right:10%;top:26px;height:1px;background:rgba(184,137,58,.45)}
+.proc b{font-family:var(--f-display);font-size:20px;font-weight:600}
+.proc span{color:var(--on-navy-soft);font-size:15.5px}
+@media (max-width:900px){.proc{grid-template-columns:minmax(0,1fr);gap:22px}.proc li{grid-row:auto;grid-template-rows:none;row-gap:6px;grid-template-columns:52px minmax(0,1fr);column-gap:18px;padding:0}.proc li .dot{grid-row:span 2}.proc::before{left:26px;right:auto;top:26px;bottom:26px;width:1px;height:auto}}
+
+/* prices */
+.price-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);gap:clamp(32px,6vw,96px);align-items:start}
+.price-table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.price-table th{text-align:left;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);font-weight:500;padding:0 0 12px;border-bottom:2px solid var(--ink)}
+.price-table th:last-child,.price-table td:last-child{text-align:right}
+.price-table td{padding:18px 0;border-bottom:1px solid var(--line);font-size:17px}
+.price-table td:last-child{font-family:var(--f-mono);font-size:15.5px;white-space:nowrap;padding-left:16px}
+.price-table tr.free td:last-child{color:var(--accent);font-weight:500}
+.price-grid .btn{margin-top:28px}
+@media (max-width:860px){.price-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* season */
+.season{position:relative;color:#fff;overflow:hidden}
+.season .ph{position:absolute;inset:0;border-radius:0}
+.season .ph::after{box-shadow:none;background:linear-gradient(90deg,rgba(10,22,36,.92) 0%,rgba(10,22,36,.78) 55%,rgba(10,22,36,.35) 100%)}
+.season .wrap{position:relative;z-index:2}
+.season-inner{max-width:640px;display:grid;gap:20px}
+.season .eyebrow{color:var(--caulk)}
+.season p{color:rgba(255,255,255,.85);font-size:18px}
+.season .btn{justify-self:start;margin-top:8px}
+.season .btn-primary{background:var(--caulk);color:var(--navy)}
+.season .btn-primary:hover{background:#fff}
+.season .ph-label{left:auto;right:max(16px,env(safe-area-inset-right,0px));bottom:16px}
+
+/* founder */
+.founder{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(32px,6vw,96px);align-items:center}
+.founder .ph{aspect-ratio:4/5}
+.quote{font-family:var(--f-display);font-size:clamp(23px,2.6vw,32px);line-height:1.38;font-weight:500;margin-top:28px}
+.quote::before{content:"«";color:var(--accent)}
+.quote::after{content:"»";color:var(--accent)}
+.sign{margin-top:28px;display:flex;align-items:center;gap:16px}
+.sign b{display:block;font-weight:700}
+.sign span{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.sign::before{content:"";width:48px;height:1px;background:var(--ink)}
+.draft{display:inline-block;margin-top:18px;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);border:1px dashed var(--line);padding:4px 8px}
+@media (max-width:860px){.founder{grid-template-columns:minmax(0,1fr)}.founder .ph{aspect-ratio:4/3}}
+
+/* reviews */
+.reviews-sec{background:var(--paper-2)}
+.reviews{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2.4vw,28px)}
+.review{background:var(--card);padding:28px;display:grid;gap:18px;align-content:space-between;border:1px solid var(--line)}
+.review p{font-size:16.5px;color:var(--ink-soft);font-style:italic}
+.review footer{display:flex;gap:14px;align-items:center}
+.avatar{width:44px;height:44px;border-radius:50%;flex:none;background:repeating-linear-gradient(180deg,var(--mahogany) 0 8px,var(--caulk) 8px 9px)}
+.review footer b{display:block;font-weight:700;font-size:15px}
+.review footer span{font-family:var(--f-mono);font-size:12px;color:var(--ink-soft)}
+@media (max-width:900px){.reviews{grid-template-columns:minmax(0,1fr)}}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,96px);align-items:start}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;font-weight:600;font-size:18px;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:8px;top:50%;width:12px;height:12px;border-right:1.5px solid var(--accent);border-bottom:1.5px solid var(--accent);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq details p{padding:0 0 22px;color:var(--ink-soft);max-width:60ch}
+@media (max-width:860px){.faq-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* contact form */
+.cta-sec{background:var(--navy);color:var(--on-navy)}
+.cta-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(32px,6vw,96px);align-items:start}
+.cta-sec .lead{color:var(--on-navy-soft);margin-top:20px}
+.big-phone{display:block;white-space:nowrap;margin-top:36px;font-family:var(--f-display);font-size:clamp(28px,3.6vw,44px);font-weight:600;text-decoration:none;letter-spacing:.01em}
+.big-phone-note{font-family:var(--f-mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin-top:6px}
+.copy-btn{margin-top:18px;background:none;border:1px solid rgba(255,255,255,.3);color:var(--on-navy);font:500 13px/1 var(--f-mono);padding:10px 14px;cursor:pointer;border-radius:2px}
+.copy-btn:hover{border-color:var(--on-navy)}
+.form{background:var(--card);color:var(--ink);padding:clamp(22px,3.4vw,40px);display:grid;gap:18px;border-radius:2px}
+.form h3{font-size:24px}
+.field{display:grid;gap:6px}
+.field label{font-size:13.5px;font-weight:600}
+.field input,.field textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:2px;padding:13px 14px}
+.field textarea{min-height:104px;resize:vertical}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.upload{border:1px dashed var(--ink-soft);padding:18px;display:flex;gap:14px;align-items:center;cursor:pointer;border-radius:2px;background:var(--paper)}
+.upload svg{width:28px;height:28px;color:var(--accent);flex:none}
+.upload input{position:absolute;width:1px;height:1px;opacity:0}
+.upload small{display:block;color:var(--ink-soft);font-size:13px}
+.upload:focus-within{outline:2px solid var(--brass);outline-offset:3px}
+.form .btn{width:100%}
+.legal{font-size:12.5px;color:var(--ink-soft)}
+.form-msg{font-size:14.5px;color:var(--accent);font-weight:600}
+@media (max-width:900px){.cta-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){.row2{grid-template-columns:minmax(0,1fr)}}
+
+/* contacts/footer */
+.contacts{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:clamp(32px,6vw,80px);align-items:stretch}
+.contact-list{list-style:none;margin:28px 0 0;padding:0;display:grid}
+.contact-list li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;padding:15px 0;border-top:1px solid var(--line)}
+.contact-list small{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);padding-top:3px}
+.map{min-height:320px;position:relative;background:
+  linear-gradient(var(--paper-2),var(--paper-2)) padding-box;border:1px solid var(--line);overflow:hidden}
+.map svg{position:absolute;inset:0;width:100%;height:100%;color:var(--line)}
+.map .ph-label{background:var(--navy)}
+.pin{position:absolute;left:52%;top:46%;width:22px;height:22px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--accent);box-shadow:0 0 0 6px rgba(138,58,34,.18)}
+@media (max-width:860px){.contacts{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:480px){.contact-list li{grid-template-columns:minmax(0,1fr);gap:2px}}
+.footer{background:var(--navy);color:var(--on-navy-soft);font-size:14px}
+.footer .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center;padding-block:28px}
+.footer .logo-text b{color:var(--on-navy)}
+.footer nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+.footer a{text-decoration:none}
+.footer a:hover{color:var(--on-navy)}
+
+
+/* mobile menu */
+.burger{display:none;width:44px;height:44px;flex:none;border:1px solid rgba(255,255,255,.25);background:none;cursor:pointer;padding:0;place-content:center;gap:5px}
+.burger span{display:block;width:20px;height:1.5px;background:var(--on-navy);transition:transform .2s,opacity .2s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.burger:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.mnav{background:var(--navy);border-top:1px solid rgba(255,255,255,.08);max-height:calc(100vh - 72px);overflow-y:auto}
+.mnav .wrap{display:grid;padding-block:8px 24px}
+.mnav a{color:var(--on-navy);text-decoration:none;font-family:var(--f-display);font-size:22px;font-weight:600;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.mnav-phone{display:grid;margin-top:18px;line-height:1.3}
+.mnav-phone b{font-family:var(--f-mono);font-weight:500;font-size:18px;color:var(--on-navy)}
+.mnav-phone span{font-size:13px;color:var(--brass)}
+@media (max-width:1240px){.burger{display:grid}}
+@media (min-width:1241px){.mnav{display:none!important}}
+@media (max-width:640px){
+  .topbar .wrap{gap:10px;min-height:64px}
+  .logo-mark{width:34px;height:34px;font-size:18px}
+  .logo-text b{font-size:16px}
+  .topbar .btn{display:none}
+  .burger{margin-left:auto}
+  .hero .wrap{padding-block:40px 48px;gap:28px}
+  .hero h1{margin-top:16px}
+  .hero-ctas{margin-top:28px}
+  .section{padding-block:56px}
+  .head{margin-bottom:28px}
+  .svc .ph{aspect-ratio:16/9!important}
+  .repair-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .repair-grid div{padding:18px 14px;gap:6px}
+  .repair-grid svg{width:28px;height:28px}
+  .repair-grid b{font-size:17px;line-height:1.2}
+  .repair-grid span{font-size:14.5px;line-height:1.45}
+  .build-drawing svg{min-width:0}
+  .build-foot{flex-direction:column;align-items:stretch}
+  .build-foot .btn,.photo-cta .btn,.price-grid .btn,.private .btn,.restore .btn{width:100%}
+  .price-table td{font-size:15.5px;padding:14px 0}
+  .price-table td:last-child{font-size:14px}
+  .trust-list li{padding-block:18px}
+  .quote{font-size:21px}
+  .founder .ph,.restore .ph{aspect-ratio:16/10}
+  .big-phone{font-size:28px}
+  .map{min-height:220px}
+}
+
+/* mobile sticky call */
+.callbar{display:none}
+@media (max-width:640px){
+  .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:55;padding:10px max(12px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));background:var(--navy);border-top:1px solid rgba(255,255,255,.1)}
+  .callbar .btn{width:100%}
+  .footer{padding-bottom:76px}
+}
+</style>
+</head><body>
+
+<!-- Header -->
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Рудаков и компания, на главную">
+      <span class="logo-mark" aria-hidden="true">Р</span>
+      <span class="logo-text"><b>Рудаков и компания</b><span>Мастерская · Санкт-Петербург</span></span>
+    </a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#services">Услуги</a>
+      <a href="#projects">Проекты</a>
+      <a href="#build">Постройка</a>
+      <a href="#prices">Цены</a>
+      <a href="#founder">О мастерской</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="top-phone" href="tel:+70000000000"><b>+7 (XXX) XXX-XX-XX</b><span>консультация бесплатно</span></a>
+    <a class="btn btn-primary" href="#call">Позвонить</a>
+    <button class="burger" type="button" id="burger" aria-expanded="false" aria-controls="mnav" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Меню" hidden>
+    <div class="wrap">
+      <a href="#services">Услуги</a>
+      <a href="#projects">Проекты</a>
+      <a href="#restoration">Реставрация</a>
+      <a href="#build">Постройка</a>
+      <a href="#prices">Цены</a>
+      <a href="#founder">О мастерской</a>
+      <a href="#contacts">Контакты</a>
+      <div class="mnav-phone"><b>+7 (XXX) XXX-XX-XX</b><span>консультация бесплатно</span></div>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- 1. Hero -->
+<section class="hero on-navy">
+  <svg class="hull" viewBox="0 0 1200 260" fill="none" stroke="#e9eef4" stroke-width="1.2" aria-hidden="true">
+    <path d="M40 120 C 300 112, 700 110, 1010 118 L 1080 124 L 1070 170 C 900 196, 520 214, 210 196 C 120 188, 70 160, 40 120 Z"/>
+    <path d="M30 168 H 1170" stroke-dasharray="10 8"/>
+    <path d="M520 118 L 560 84 L 650 84 L 640 118"/>
+    <path d="M60 140 C 350 150, 750 150, 1075 146" opacity=".6"/>
+    <g opacity=".5" stroke-dasharray="3 6"><path d="M200 60V230"/><path d="M360 60V230"/><path d="M520 60V230"/><path d="M680 60V230"/><path d="M840 60V230"/><path d="M1000 60V230"/></g>
+  </svg>
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Мастерская в Санкт-Петербурге</div>
+      <h1>Реставрация, ремонт и&nbsp;постройка <em>катеров и&nbsp;яхт</em></h1>
+      <p class="lead">Мастерская Станислава Рудакова. Работаем с классическими и современными судами от 5 метров: дерево, стеклопластик, механика, электрика. Беремся за сложные задачи и доводим их до конца.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#call">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Позвонить: консультация бесплатно</a>
+        <a class="btn btn-ghost" href="#form">Отправить фото лодки</a>
+      </div>
+      <div class="hero-meta"><span><b>+7 (XXX) XXX-XX-XX</b></span><span>Санкт-Петербург, [адрес]</span></div>
+    </div>
+    <div class="hero-visual">
+      <div class="ph hero-photo" role="img" aria-label="Место для фото или видео: классический катер после реставрации">
+        <span class="ph-tag">Фото / видео-петля</span>
+        <span class="ph-label">Катер после реставрации, на воде</span>
+      </div>
+      <div class="spec-strip">
+        <div><small>Суда</small><b>от 5 м</b></div>
+        <div><small>Работаем</small><b>3 года</b></div>
+        <div><small>Консультация</small><b>0 ₽</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Services -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Что мы делаем</div>
+      <h2>Три направления мастерской</h2>
+    </div>
+    <div class="services">
+      <a class="svc" href="#restoration">
+        <div class="ph" role="img" aria-label="Место для фото: реставрация"><span class="ph-label">Реставрация · деталь лакового борта</span></div>
+        <span class="num">Главное направление</span>
+        <h3>Реставрация классических катеров и яхт</h3>
+        <p>Возвращаем деревянным и классическим судам прежний вид и надёжность. Сохраняем то, что делает лодку особенной: линии корпуса, дерево, фурнитуру, характер.</p>
+        <span class="textlink">Подробнее</span>
+      </a>
+      <a class="svc" href="#repair">
+        <div class="ph" role="img" aria-label="Место для фото: ремонт"><span class="ph-label">Ремонт · работа в мастерской</span></div>
+        <span class="num" aria-hidden="true"></span>
+        <h3>Ремонт и обслуживание</h3>
+        <p>Корпус, двигатель, электрика, рангоут и такелаж, покраска. Ищем причину неисправности и устраняем её, а не только последствия.</p>
+        <span class="textlink">Подробнее</span>
+      </a>
+      <a class="svc" href="#build">
+        <div class="ph" role="img" aria-label="Место для фото: постройка"><span class="ph-label">Постройка · набор корпуса на стапеле</span></div>
+        <span class="num" aria-hidden="true"></span>
+        <h3>Постройка катеров и яхт</h3>
+        <p>Строим суда в классическом стиле под задачи владельца. От обсуждения идеи до спуска на воду.</p>
+        <span class="textlink">Подробнее</span>
+      </a>
+    </div>
+    <div class="also">
+      <p><b>Также:</b> бортовые системы и автоматизация, модернизация, зимнее хранение, осмотр судна перед покупкой.</p>
+      <a class="textlink" href="#systems">Все виды работ →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Trust -->
+<section class="section trust">
+  <div class="wrap trust-grid">
+    <div class="head" style="margin-bottom:0">
+      <div class="eyebrow">Почему нам доверяют</div>
+      <h2>Почему владельцы доверяют нам свои лодки</h2>
+    </div>
+    <ul class="trust-list">
+      <li><b>Доводим работу до конца.</b><span>Беремся за то, что можем сделать хорошо, и сдаём лодку готовой. Никаких корпусов, брошенных на полпути.</span></li>
+      <li><b>Основатель отвечает лично.</b><span>Станислав Рудаков участвует в каждом проекте, от первого осмотра до сдачи.</span></li>
+      <li><b>Всё в одной мастерской.</b><span>Дерево, стеклопластик, механика, электрика и электроника. Не нужно искать нескольких подрядчиков и согласовывать их между собой.</span></li>
+      <li><b>Цена до начала работ.</b><span>Сначала осмотр и смета, потом согласование. Работу начинаем только после вашего «да».</span></li>
+      <li><b>Видно, как идёт работа.</b><span>Показываем каждый этап и присылаем фото.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 4. Projects -->
+<section class="section" id="projects">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Наши проекты</div>
+      <h2>Каким судно пришло и каким ушло на воду</h2>
+      <p class="lead">Каждый проект — история конкретного судна: каким оно пришло к нам, что мы сделали и каким ушло на воду.</p>
+    </div>
+    <div class="slider" aria-roledescription="карусель" aria-label="Проекты">
+      <div class="slider-bar">
+        <div class="slider-count"><b class="sl-cur">01</b><span>/ <span class="sl-total">03</span></span></div>
+        <div class="slider-progress" aria-hidden="true"><i class="sl-prog"></i></div>
+        <div class="slider-btns">
+          <button class="sl-btn sl-prev" type="button" aria-label="Предыдущий проект"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 5l-7 7 7 7M8 12h13"/></svg></button>
+          <button class="sl-btn sl-next" type="button" aria-label="Следующий проект"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 5l7 7-7 7M16 12H3"/></svg></button>
+        </div>
+      </div>
+      <div class="slides" tabindex="0">
+      <article class="project" role="group" aria-roledescription="слайд" aria-label="Проект 1 из 3">
+        <div class="project-media stages">
+          <div class="ph" role="img" aria-label="Фото до работ"><span class="ph-label">До</span></div>
+          <div class="ph" role="img" aria-label="Фото в процессе"><span class="ph-label">В процессе</span></div>
+          <div class="ph" role="img" aria-label="Фото после"><span class="ph-label">После</span></div>
+        </div>
+        <div>
+          <span class="project-year">Работы: [год] · срок [__ мес.]</span>
+          <h3>[Название или тип судна], [год постройки]</h3>
+          <div class="specs">
+            <div><small>Длина</small><b>[__] м</b></div>
+            <div><small>Корпус</small><b>[материал]</b></div>
+            <div><small>Двигатель</small><b>[__]</b></div>
+          </div>
+          <dl>
+            <div><dt>Задача владельца</dt><dd>[например: восстановить корпус и лаковое покрытие, сохранив оригинальный облик]</dd></div>
+            <div><dt>Что сделали</dt><dd>[список работ]</dd></div>
+            <div><dt>Материалы и технологии</dt><dd>[__]</dd></div>
+            <div><dt>Результат</dt><dd>[1–2 предложения]</dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="project" role="group" aria-roledescription="слайд" aria-label="Проект 2 из 3">
+        <div class="project-media stages">
+          <div class="ph" role="img" aria-label="Фото до работ"><span class="ph-label">До</span></div>
+          <div class="ph" role="img" aria-label="Фото в процессе"><span class="ph-label">В процессе</span></div>
+          <div class="ph" role="img" aria-label="Фото после"><span class="ph-label">После</span></div>
+        </div>
+        <div>
+          <span class="project-year">Работы: [год] · срок [__ мес.]</span>
+          <h3>[Название или тип судна], [год постройки]</h3>
+          <div class="specs">
+            <div><small>Длина</small><b>[__] м</b></div>
+            <div><small>Корпус</small><b>[материал]</b></div>
+            <div><small>Двигатель</small><b>[__]</b></div>
+          </div>
+          <dl>
+            <div><dt>Задача владельца</dt><dd>[задача]</dd></div>
+            <div><dt>Что сделали</dt><dd>[список работ]</dd></div>
+            <div><dt>Результат</dt><dd>[1–2 предложения]</dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="project" role="group" aria-roledescription="слайд" aria-label="Проект 3 из 3">
+        <div class="project-media stages">
+          <div class="ph" role="img" aria-label="Фото до работ"><span class="ph-label">До</span></div>
+          <div class="ph" role="img" aria-label="Фото в процессе"><span class="ph-label">В процессе</span></div>
+          <div class="ph" role="img" aria-label="Фото после"><span class="ph-label">После</span></div>
+        </div>
+        <div>
+          <span class="project-year">Работы: [год] · срок [__ мес.]</span>
+          <h3>[Название или тип судна], [год постройки]</h3>
+          <div class="specs">
+            <div><small>Длина</small><b>[__] м</b></div>
+            <div><small>Корпус</small><b>[материал]</b></div>
+            <div><small>Двигатель</small><b>[__]</b></div>
+          </div>
+          <dl>
+            <div><dt>Задача владельца</dt><dd>[задача]</dd></div>
+            <div><dt>Что сделали</dt><dd>[список работ]</dd></div>
+            <div><dt>Результат</dt><dd>[1–2 предложения]</dd></div>
+          </dl>
+        </div>
+      </article>
+      </div>
+      <p class="slider-hint">Листайте кнопками или свайпом</p>
+    </div>
+    <div class="private">
+      <p>Часть работ мы не показываем: некоторые владельцы предпочитают конфиденциальность. О них расскажем при личной встрече.</p>
+      <a class="btn btn-primary" href="#call">Обсудить похожий проект</a>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Restoration -->
+<section class="section restore on-navy" id="restoration">
+  <div class="wrap restore-grid">
+    <div class="ph" role="img" aria-label="Место для фото: реставрация деревянного корпуса"><span class="ph-label">Снятие старого лака, обшивка из красного дерева</span></div>
+    <div>
+      <div class="eyebrow">Реставрация</div>
+      <h2 style="margin-top:18px">Реставрация классических судов</h2>
+      <p class="lead" style="margin-top:20px">Классический катер ценен не только тем, как он ходит, но и тем, как выглядит и что за ним стоит. Поэтому сначала мы разбираемся, что в лодке можно и нужно сохранить, и только потом решаем, что заменить.</p>
+      <ul class="checklist">
+        <li>Восстанавливаем деревянный корпус, обшивку и набор</li>
+        <li>Снимаем старые покрытия и заново наносим лак и краску</li>
+        <li>Реставрируем фурнитуру или изготавливаем детали заново</li>
+        <li>Меняем проводку и системы, не нарушая облик судна</li>
+        <li>Приводим в порядок двигатель и механику</li>
+      </ul>
+      <p class="result">В итоге вы получаете лодку, которая выглядит как в год постройки и надёжна сегодня.</p>
+      <a class="btn btn-primary" href="#call" style="margin-top:28px">Позвонить и обсудить реставрацию</a>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Repair -->
+<section class="section" id="repair">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Ремонт и обслуживание</div>
+      <h2>Ремонт и обслуживание</h2>
+      <p class="lead">Ремонтируем деревянные, стеклопластиковые и композитные суда от 5 метров, моторные и парусные.</p>
+    </div>
+    <div class="repair-grid">
+      <div>
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 12h26l-4 12H7z"/><path d="M3 18h26M10 12v12M16 12v12M22 12v12"/></svg>
+        <b>Корпус</b><span>Дерево, стеклопластик, композиты: устраняем повреждения и восстанавливаем конструкцию.</span></div>
+      <div>
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="7" y="10" width="16" height="13" rx="1"/><path d="M11 10V6h8v4M23 14h4v5h-4M7 16H4M12 23v3M18 23v3"/></svg>
+        <b>Двигатель</b><span>Ремонт и регулярное обслуживание.</span></div>
+      <div>
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 3 8 18h8l-2 11 10-15h-8z"/></svg>
+        <b>Электрика и электроника</b><span>Проводка, бортовая сеть, навигационное оборудование.</span></div>
+      <div>
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 3v24M15 5 26 24H15M15 9 6 22h9M5 28h22"/></svg>
+        <b>Мачты и такелаж</b><span>Ремонт рангоута, такелажа и парусного вооружения.</span></div>
+      <div>
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="4" width="18" height="8" rx="1"/><path d="M23 8h4v7H14v4M12 19h4v10h-4z"/></svg>
+        <b>Покраска и покрытия</b><span>Восстанавливаем лак и краску.</span></div>
+      <div>
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="16" cy="16" r="5"/><path d="M16 3v5M16 24v5M3 16h5M24 16h5M6.8 6.8l3.5 3.5M21.7 21.7l3.5 3.5M6.8 25.2l3.5-3.5M21.7 10.3l3.5-3.5"/></svg>
+        <b>Нестандартные детали</b><span>Изготовим то, что нельзя купить готовым.</span></div>
+    </div>
+    <div class="photo-cta">
+      <p>Пришлите фото повреждения, и мы скажем, что нужно сделать.</p>
+      <a class="btn btn-ghost" href="#form">Отправить фото</a>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Build -->
+<section class="section build" id="build">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Постройка</div>
+      <h2>Постройка катеров и яхт</h2>
+      <p class="lead">Если вы мечтаете о собственном судне в классическом стиле, его можно построить. Мы строим катера и яхты под задачи владельца: как и где вы будете ходить, сколько человек на борту, какой нужен комфорт.</p>
+    </div>
+    <figure class="build-drawing" style="margin-left:0;margin-right:0">
+      <svg viewBox="0 0 1000 300" fill="none" stroke="currentColor" aria-label="Теоретический чертёж: боковой вид классического катера длиной 7,2 метра" role="img">
+        <g stroke-width=".6" opacity=".25">
+          <path d="M60 40V260M180 40V260M300 40V260M420 40V260M540 40V260M660 40V260M780 40V260M900 40V260"/>
+          <path d="M40 90H960M40 140H960M40 190H960M40 240H960"/>
+        </g>
+        <path d="M70 118 C 300 106, 650 104, 860 112 L 925 118 L 918 178 C 760 206, 420 222, 190 204 C 120 196, 88 160, 70 118 Z" stroke-width="2"/>
+        <path d="M80 140 C 360 152, 700 152, 922 146" stroke-width="1" opacity=".7"/>
+        <path d="M96 166 C 360 184, 700 182, 920 170" stroke-width="1" opacity=".5"/>
+        <path d="M420 112 L 456 78 L 540 78 L 548 110" stroke-width="1.6"/>
+        <path d="M600 110 V 92 H 700 V 110" stroke-width="1" opacity=".7"/>
+        <path d="M30 178 H 970" stroke-width="1.2" stroke-dasharray="12 8" class="wl"/>
+        <path d="M70 272 H 925" stroke-width="1"/>
+        <path d="M70 264 V 280 M925 264 V 280" stroke-width="1"/>
+        <g fill="currentColor" stroke="none" font-family="IBM Plex Mono, monospace" font-size="13">
+          <text x="440" y="292">L = 7,20 м</text>
+          <text x="934" y="174">КВЛ</text>
+          <text x="58" y="34">0</text><text x="174" y="34">1</text><text x="294" y="34">2</text><text x="414" y="34">3</text><text x="534" y="34">4</text><text x="654" y="34">5</text><text x="774" y="34">6</text><text x="894" y="34">7</text>
+        </g>
+      </svg>
+    </figure>
+    <ol class="steps">
+      <li><b>Обсуждаем идею, назначение и бюджет.</b></li>
+      <li><b>Выбираем проект и материалы.</b></li>
+      <li><b>Согласуем смету и сроки.</b></li>
+      <li><b>Строим и показываем вам каждый этап.</b></li>
+      <li><b>Спускаем судно на воду и передаём его вам.</b></li>
+    </ol>
+    <div class="build-foot">
+      <span class="eyebrow" style="color:var(--ink-soft)">Чертёж условный, для иллюстрации</span>
+      <a class="btn btn-primary" href="#call">Обсудить постройку</a>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Systems -->
+<section class="section" id="systems">
+  <div class="wrap sys">
+    <div class="head" style="margin-bottom:0">
+      <div class="eyebrow">Системы на борту</div>
+      <h2>Комфорт и системы на борту</h2>
+      <p class="lead">Делаем лодку удобнее, не нарушая её облик.</p>
+    </div>
+    <ul class="sys-list">
+      <li><b>Отопление</b><span>для прохладных вечеров и длинного сезона.</span></li>
+      <li><b>Музыка и акустика</b></li>
+      <li><b>Навигационная электроника</b></li>
+      <li><b>Автоматизация</b><span>электроприводы люков и штор, управление светом.</span></li>
+      <li><b>Модернизация и переоборудование</b><span>под новые задачи.</span></li>
+      <li><b>Осмотр и подбор судна</b><span>перед покупкой: поможем не купить проблему.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 9. Process -->
+<section class="section process on-navy">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Порядок работы</div>
+      <h2>Как мы работаем</h2>
+    </div>
+    <ol class="proc">
+      <li><span class="dot">01</span><b>Консультация — бесплатно</b><span>Позвоните или пришлите фото: обсудим задачу и скажем, чем можем помочь.</span></li>
+      <li><span class="dot">02</span><b>Осмотр</b><span>Смотрим судно вживую и определяем объём работ.</span></li>
+      <li><span class="dot">03</span><b>Оценка стоимости</b><span>Готовим смету и называем сроки.</span></li>
+      <li><span class="dot">04</span><b>Согласование</b><span>Обсуждаем детали. Начинаем только после вашего согласия.</span></li>
+      <li><span class="dot">05</span><b>Работы и сдача</b><span>Выполняем работы и передаём вам готовое судно.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 10. Prices -->
+<section class="section" id="prices">
+  <div class="wrap price-grid">
+    <div>
+      <div class="head" style="margin-bottom:0">
+        <div class="eyebrow">Цены</div>
+        <h2>Сколько стоит</h2>
+        <p class="lead">Каждое судно индивидуально, поэтому точную стоимость называем после осмотра. Для ориентира:</p>
+      </div>
+      <a class="btn btn-primary" href="#call">Узнать стоимость для вашей лодки</a>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="price-table">
+        <thead><tr><th>Работа</th><th>Стоимость</th></tr></thead>
+        <tbody>
+          <tr class="free"><td>Консультация</td><td>бесплатно</td></tr>
+          <tr><td>Реставрация классического катера</td><td>от [___] ₽</td></tr>
+          <tr><td>Ремонт корпуса</td><td>от [___] ₽</td></tr>
+          <tr><td>Обслуживание двигателя</td><td>от [___] ₽</td></tr>
+          <tr><td>Постройка катера</td><td>от [___] ₽</td></tr>
+          <tr><td>Зимнее хранение</td><td>от [___] ₽ за сезон</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 11. Season -->
+<section class="section season">
+  <div class="ph" aria-hidden="true"><span class="ph-label">Фон: лодки на зимней стоянке</span></div>
+  <div class="wrap">
+    <div class="season-inner">
+      <div class="eyebrow">Сезон</div>
+      <h2>Подготовка к сезону и зимнее хранение</h2>
+      <p>Весной у мастерских очереди. Чтобы спустить лодку на воду вовремя, договоритесь с нами заранее.</p>
+      <p>Принимаем суда на зимнее хранение и за зиму выполняем нужные работы: ремонт, обслуживание, покраску. К началу сезона лодка готова к выходу.</p>
+      <a class="btn btn-primary" href="#call">Записаться на зимнее хранение</a>
+    </div>
+  </div>
+</section>
+
+<!-- 12. Founder -->
+<section class="section" id="founder">
+  <div class="wrap founder">
+    <div class="ph" role="img" aria-label="Место для фото Станислава Рудакова в мастерской"><span class="ph-label">Фото: Станислав в мастерской</span></div>
+    <div>
+      <div class="eyebrow">Основатель</div>
+      <h2 style="margin-top:18px">Станислав Рудаков, основатель мастерской</h2>
+      <p class="quote">Я основал мастерскую, потому что люблю лодки, в которых есть характер. Для меня важно, чтобы каждое судно, которое уходит от нас, было сделано так, как я сделал бы его для себя. Поэтому я лично участвую в каждом проекте и отвечаю за результат.</p>
+      <div class="sign"><div><b>Станислав Рудаков</b><span>Рудаков и компания</span></div></div>
+      <span class="draft">Черновик цитаты, согласовать</span>
+    </div>
+  </div>
+</section>
+
+<!-- 13. Reviews -->
+<section class="section reviews-sec">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Отзывы</div>
+      <h2>Нас рекомендуют</h2>
+      <p class="lead">Большинство владельцев приходят к нам по рекомендации тех, чьи лодки мы уже восстановили или отремонтировали.</p>
+    </div>
+    <div class="slider" aria-roledescription="карусель" aria-label="Отзывы">
+      <div class="slider-bar">
+        <div class="slider-count"><b class="sl-cur">01</b><span>/ <span class="sl-total">06</span></span></div>
+        <div class="slider-progress" aria-hidden="true"><i class="sl-prog"></i></div>
+        <div class="slider-btns">
+          <button class="sl-btn sl-prev" type="button" aria-label="Предыдущий отзыв"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 5l-7 7 7 7M8 12h13"/></svg></button>
+          <button class="sl-btn sl-next" type="button" aria-label="Следующий отзыв"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 5l7 7-7 7M16 12H3"/></svg></button>
+        </div>
+      </div>
+      <div class="slides slides-reviews" tabindex="0">
+        <figure class="review" role="group" aria-label="Отзыв 1 из 6"><p>[Отзыв 1. Текст отзыва владельца о работе мастерской.]</p><footer><span class="avatar" aria-hidden="true"></span><div><b>[Имя владельца]</b><span>[Судно] · [какие работы]</span></div></footer></figure>
+        <figure class="review" role="group" aria-label="Отзыв 2 из 6"><p>[Отзыв 2. Текст отзыва владельца о работе мастерской.]</p><footer><span class="avatar" aria-hidden="true"></span><div><b>[Имя владельца]</b><span>[Судно] · [какие работы]</span></div></footer></figure>
+        <figure class="review" role="group" aria-label="Отзыв 3 из 6"><p>[Отзыв 3. Текст отзыва владельца о работе мастерской.]</p><footer><span class="avatar" aria-hidden="true"></span><div><b>[Имя владельца]</b><span>[Судно] · [какие работы]</span></div></footer></figure>
+        <figure class="review" role="group" aria-label="Отзыв 4 из 6"><p>[Отзыв 4. Текст отзыва владельца о работе мастерской.]</p><footer><span class="avatar" aria-hidden="true"></span><div><b>[Имя владельца]</b><span>[Судно] · [какие работы]</span></div></footer></figure>
+        <figure class="review" role="group" aria-label="Отзыв 5 из 6"><p>[Отзыв 5. Текст отзыва владельца о работе мастерской.]</p><footer><span class="avatar" aria-hidden="true"></span><div><b>[Имя владельца]</b><span>[Судно] · [какие работы]</span></div></footer></figure>
+        <figure class="review" role="group" aria-label="Отзыв 6 из 6"><p>[Отзыв 6. Текст отзыва владельца о работе мастерской.]</p><footer><span class="avatar" aria-hidden="true"></span><div><b>[Имя владельца]</b><span>[Судно] · [какие работы]</span></div></footer></figure>
+      </div>
+      <p class="slider-hint">Листайте кнопками или свайпом</p>
+    </div>
+  </div>
+</section>
+
+<!-- 14. FAQ -->
+<section class="section">
+  <div class="wrap faq-grid">
+    <div class="head" style="margin-bottom:0">
+      <div class="eyebrow">Вопросы</div>
+      <h2>Частые вопросы</h2>
+    </div>
+    <div class="faq">
+      <details open><summary>Беретесь ли вы за небольшой ремонт?</summary><p>Да. Позвоните и опишите задачу, подскажем, как лучше поступить.</p></details>
+      <details><summary>Сколько стоит консультация?</summary><p>Консультация бесплатная.</p></details>
+      <details><summary>С какими судами вы работаете?</summary><p>С деревянными, стеклопластиковыми и композитными катерами и яхтами от 5 метров, моторными и парусными.</p></details>
+      <details><summary>Как вы считаете стоимость?</summary><p>После осмотра судна. Готовим смету, согласуем её с вами и только потом начинаем работу.</p></details>
+      <details><summary>Можно ли приехать в мастерскую?</summary><p>Да, договоритесь с нами заранее по телефону.</p></details>
+      <details><summary>Работаете ли вы за пределами Петербурга?</summary><p>Основная работа идёт в мастерской в Петербурге, но мы выполняем проекты и в других регионах. Условия обсудим по телефону.</p></details>
+      <details><summary>Можно ли следить за ходом работ?</summary><p>Да. Показываем каждый этап и присылаем фото.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 15. CTA + form -->
+<section class="section cta-sec on-navy" id="call">
+  <div class="wrap cta-grid">
+    <div>
+      <div class="eyebrow">Связаться</div>
+      <h2 style="margin-top:18px">Расскажите о своей лодке</h2>
+      <p class="lead">Позвоните, консультация бесплатная. Или оставьте заявку с фото и парой слов о задаче, и мы перезвоним.</p>
+      <a class="big-phone" href="tel:+70000000000" id="phone">+7 (XXX) XXX-XX-XX</a>
+      <p class="big-phone-note">Консультация бесплатно</p>
+      <button class="copy-btn" type="button" id="copyPhone">Скопировать номер</button>
+    </div>
+    <form class="form" id="form" novalidate>
+      <h3>Заявка с фото</h3>
+      <div class="row2">
+        <div class="field"><label for="f-name">Имя</label><input id="f-name" name="name" autocomplete="name"></div>
+        <div class="field"><label for="f-phone">Телефон</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+7"></div>
+      </div>
+      <div class="field"><label for="f-boat">Тип и длина судна</label><input id="f-boat" name="boat" placeholder="Например: деревянный катер, 6,5 м"></div>
+      <div class="field"><label for="f-task">Что нужно сделать</label><textarea id="f-task" name="task"></textarea></div>
+      <label class="upload" for="f-photo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h3l2-3h6l2 3h3v13H4z"/><circle cx="12" cy="13" r="4"/></svg>
+        <span><b id="f-photo-text">Загрузить фото</b><small>Можно несколько снимков: общий вид и повреждения</small></span>
+        <input id="f-photo" name="photo" type="file" accept="image/*" multiple>
+      </label>
+      <button class="btn btn-primary" type="submit">Отправить заявку</button>
+      <p class="form-msg" id="form-msg" hidden></p>
+      <p class="legal">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.</p>
+    </form>
+  </div>
+</section>
+
+<!-- 16. Contacts -->
+<section class="section" id="contacts">
+  <div class="wrap contacts">
+    <div>
+      <div class="eyebrow">Контакты</div>
+      <h2 style="margin-top:18px">Рудаков и компания</h2>
+      <p class="lead" style="margin-top:14px">Мастерская по реставрации, ремонту и постройке катеров и яхт.</p>
+      <ul class="contact-list">
+        <li><small>Адрес</small><span>Санкт-Петербург, [адрес]</span></li>
+        <li><small>Телефон</small><span>[+7 (XXX) XXX-XX-XX]</span></li>
+        <li><small>Мессенджеры</small><span>[Telegram / WhatsApp]</span></li>
+        <li><small>Время работы</small><span>[__]</span></li>
+      </ul>
+    </div>
+    <div class="map" role="img" aria-label="Место для карты">
+      <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M0 250 C 120 230, 200 280, 320 250 S 520 200, 600 230" stroke-width="26" opacity=".7"/>
+        <path d="M80 0 L 140 400 M 300 0 L 260 400 M 470 0 L 520 400 M 0 90 L 600 120 M 0 340 L 600 320"/>
+        <path d="M0 170 L 600 160" stroke-dasharray="6 6"/>
+      </svg>
+      <span class="pin" aria-hidden="true"></span>
+      <span class="ph-label">Здесь будет карта</span>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <a class="logo" href="#top"><span class="logo-mark" aria-hidden="true">Р</span><span class="logo-text"><b>Рудаков и компания</b></span></a>
+    <nav aria-label="Нижнее меню"><a href="#services">Услуги</a><a href="#projects">Проекты</a><a href="#prices">Цены</a><a href="#contacts">Контакты</a></nav>
+    <span>© 2026 Рудаков и компания</span>
+  </div>
+</footer>
+
+<div class="callbar"><a class="btn btn-primary" href="#call">Позвонить: консультация бесплатно</a></div>
+
+<script>
+(function(){
+  var bg=document.getElementById('burger'),mn=document.getElementById('mnav');
+  function setMenu(o){bg.setAttribute('aria-expanded',o?'true':'false');bg.setAttribute('aria-label',o?'Закрыть меню':'Открыть меню');mn.hidden=!o;}
+  bg.addEventListener('click',function(){setMenu(mn.hidden)});
+  mn.addEventListener('click',function(e){if(e.target.closest('a'))setMenu(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!mn.hidden){setMenu(false);bg.focus()}});
+  document.querySelectorAll('.slider').forEach(function(root){
+    var sl=root.querySelector('.slides'),pv=root.querySelector('.sl-prev'),nx=root.querySelector('.sl-next'),cur=root.querySelector('.sl-cur'),tot=root.querySelector('.sl-total'),prog=root.querySelector('.sl-prog');
+    var items=Array.prototype.slice.call(sl.children);
+    function pos(){var max=sl.scrollWidth-sl.clientWidth,o=items[0].offsetLeft,r=[];items.forEach(function(it){var x=it.offsetLeft-o;if(x<=max+2)r.push(x)});if(r[r.length-1]<max-2)r.push(max);return r;}
+    function upd(){var P=pos(),n=P.length,i=0,best=1e9;P.forEach(function(x,k){var d=Math.abs(x-sl.scrollLeft);if(d<best){best=d;i=k}});
+      cur.textContent=('0'+(i+1)).slice(-2);tot.textContent=('0'+n).slice(-2);prog.style.width=(100/n)+'%';prog.style.transform='translateX('+(i*100)+'%)';pv.disabled=i===0;nx.disabled=i===n-1;root._i=i;}
+    function go(d){var P=pos();var i=Math.min(P.length-1,Math.max(0,(root._i||0)+d));sl.scrollTo({left:P[i],behavior:'smooth'});}
+    pv.addEventListener('click',function(){go(-1)});nx.addEventListener('click',function(){go(1)});
+    sl.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(1)}if(e.key==='ArrowLeft'){e.preventDefault();go(-1)}});
+    var t;sl.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(upd,60)});window.addEventListener('resize',upd);upd();
+  });
+  var form=document.getElementById('form'),msg=document.getElementById('form-msg');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    msg.textContent='Это макет: заявка пока никуда не отправляется. На сайте здесь будет отправка менеджеру.';
+    msg.hidden=false;
+  });
+  var file=document.getElementById('f-photo'),ft=document.getElementById('f-photo-text');
+  file.addEventListener('change',function(){
+    var n=file.files?file.files.length:0;
+    ft.textContent=n?('Выбрано фото: '+n):'Загрузить фото';
+  });
+  var cb=document.getElementById('copyPhone');
+  cb.addEventListener('click',function(){
+    var t=document.getElementById('phone').textContent.trim();
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('phone'));var s=getSelection();s.removeAllRanges();s.addRange(r);cb.textContent='Номер выделен';}
+    try{navigator.clipboard.writeText(t).then(function(){cb.textContent='Номер скопирован';},sel);}catch(err){sel();}
+  });
+})();
+</script>
+
+</body></html>
